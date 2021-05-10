@@ -29,9 +29,13 @@ impl TuringMachine {
             right_tape: vec![false],
             head_position: 0,
             current_state: 0,
-            final_state: 'H' as usize - 'A' as usize,
+            final_state: 'h' as usize - 'A' as usize,
             transistions: transitions,
         }
+    }
+
+    pub fn get_state_n(&self) -> usize {
+        return self.transistions.len();
     }
 
     fn get_current_sign(&self) -> bool {
@@ -136,7 +140,7 @@ fn get_transition_direction(direction: Option<char>) -> Direction {
 fn get_transition_next_state(next_state: Option<char>) -> usize {
     match next_state {
         Some(state) => match state {
-            'A'..='Z' => state as usize - 'A' as usize,
+            'A'..='Z' | 'h' => state as usize - 'A' as usize,
             _ => panic!("Incorrect direction for transition. Must be a letter from A to Z"),
         },
         _ => panic!("Incorrect direction for transition. Must exist"),
@@ -176,7 +180,10 @@ fn read_transitions() -> io::Result<Vec<(Transition, Transition)>> {
 fn main() {
     let mut turing_machine = TuringMachine::new(read_transitions().unwrap());
     let (step_n, non_blank_n) = turing_machine.run();
-    println!("Finished running busy beaver");
+    println!(
+        "Finished running busy beaver for {} states",
+        turing_machine.get_state_n()
+    );
     println!("Non blank symbols: {}", non_blank_n);
     println!("Steps taken: {}", step_n);
 }
