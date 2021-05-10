@@ -24,13 +24,13 @@ Input should be written accodring to following rules:
 Each transition is a 3 sign string \<sing\>\<transition\>\<state\>
 * sign is either `0` or `1`. Denotes which sign should be written on a tape
 * transition is either `L` or `R`. Denotes which way the head of tape should move (left or right)
-* state is a capital letter `A`-`Z` | `h`. If a capital letter is accessible during simulation of busy beaver, all letters in alphabet before this letter should have transitions provided
+* state is a capital letter `A-Z | h`. If a capital letter is accessible during simulation of busy beaver, all letters in alphabet before this letter should have transitions provided
 * `h` is a special state and no transitions can be provided for it. It is the halting state
 
-Numer of transitions should be even. `n`-th pair of transitions represents transitions for `n`-th letter in alphabet. First transition in pair denotes transition when there is `0` under the head of machine, and second transition is a transition when there is `1` under the head of machine.
+Numer of transitions should be even. `n-th` pair of transitions represents transitions for `n-th` letter in alphabet. First transition in pair denotes transition when there is `0` under the head of machine, and second transition is a transition when there is `1` under the head of machine.
 So input:
 ```
-0RB	1Rh	0LC	1RA	1RB	1LC	
+0RB 1Rh 0LC 1RA 1RB 1LC	
 ```
 Represents turing machine with state transitions:
 ```
