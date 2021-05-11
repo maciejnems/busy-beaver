@@ -1,8 +1,8 @@
 # Rusty Beaver
 Implementation of Busy Beaver problem in Rust
 
-Link to rust playground:
-https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=9750515113ade36327de394e2cabe3aa
+[Link](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=9750515113ade36327de394e2cabe3aa) to rust playground with Rusty Beaver
+
 ## How to run
 Program can be build by `cargo build`. After that binary can be found in a subfolder of `target/`.
 
@@ -12,11 +12,11 @@ Program takes transitions in stdin separated by whitespaces.
 
 Example usage:
 ```
-cargo run < example.in
+cargo run --release < example.in
 ```
 ```
-cargo build
-.target/debug/busy-beaver < example.in
+cargo build --release
+.target/release/busy-beaver < example.in
 ```
 ## Input Layout
 Input should be written accodring to following rules:
