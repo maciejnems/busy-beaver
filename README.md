@@ -16,7 +16,7 @@ cargo run --release < example.in
 ```
 ```
 cargo build --release
-.target/release/busy-beaver < example.in
+./target/release/busy-beaver < example.in
 ```
 ## Input Layout
 Input should be written accodring to following rules:
